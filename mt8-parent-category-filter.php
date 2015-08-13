@@ -29,7 +29,7 @@
 		
 		public function is_target_taxonomy( $taxonomy ) {
 			
-			return in_array( $taxonomy, apply_filters( 'mt8-parent-category-filter-allow_taxonomies', $this->allow_taxonomies ) );
+			return in_array( $taxonomy, apply_filters( 'mt8-parent-category-filter-allow-taxonomies', $this->allow_taxonomies ) );
 			
 		}
 		
