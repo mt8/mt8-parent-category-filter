@@ -116,16 +116,17 @@
 				<form id="parent_search_form" class="search-form" method="get">
 				<input type="hidden" name="taxonomy" value="<?php echo esc_attr( $taxonomy ); ?>" />
 				<input type="hidden" name="post_type" value="<?php echo esc_attr( $post_type ); ?>" />
+				<label for="parent_search"><?php _e( 'Filter by top parent', self::TEXT_DOMAIN ) ?></label>
 				<?php
 				$dropdown_args = array(
-					'depth'            => 1,					
+					'depth'            => 2,					
 					'hide_empty'       => 0,
 					'hide_if_empty'    => true,
 					'taxonomy'         => $taxonomy,
 					'name'             => 'parent_search',
 					'orderby'          => 'name',
 					'hierarchical'     => true,
-					'show_option_none' => __( 'Filter by top parent', self::TEXT_DOMAIN ),
+					'show_option_none' => __( 'All' ),
 					'selected'         => $this->parent_search(),					
 				);
 				wp_dropdown_categories( $dropdown_args );
